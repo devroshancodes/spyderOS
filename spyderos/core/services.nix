@@ -6,7 +6,8 @@
 			KillUserProcesses=true;
 	};
 
-	#services.displayManager.dms-greeter = {
-	#	enable = true;
-	#};
+	services.displayManager.dms-greeter = {
+	enable = true;
+	compositor.name = "mangowc"
+	};
 }
