@@ -1,11 +1,8 @@
 { config, pkgs, ... }:
 
 {
-	services.logind = {
-		extraConfig = ''
-			[Login]
-			HandlePowerKey=suspend
-			KillUserProcesses=yes
-			'';
+	services.logind.settings.Login = {
+			HandlePowerKey="suspend";
+			KillUserProcesses="true";
 	};
 }
