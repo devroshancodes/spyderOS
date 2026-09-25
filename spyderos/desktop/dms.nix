@@ -13,5 +13,7 @@
     enableDynamicTheming = true;
     enableAudioWavelength = true;
     enableCalendarEvents = true;
+
+		package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default
   };
 }
