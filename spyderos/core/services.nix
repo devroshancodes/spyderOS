@@ -3,6 +3,6 @@
 {
 	services.logind.settings.Login = {
 			HandlePowerKey="suspend";
-			KillUserProcesses="true";
+			KillUserProcesses=true;
 	};
 }
