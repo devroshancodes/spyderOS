@@ -14,6 +14,6 @@
     enableAudioWavelength = true;
     enableCalendarEvents = true;
 
-		package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default
+		package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
 }
