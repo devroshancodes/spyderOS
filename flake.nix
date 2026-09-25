@@ -15,7 +15,8 @@
   	};
 		
 		dankmediashell.url = "github:AvengeMedia/DankMaterialShell";
- 
+ };
+
  outputs = { self, nixpkgs, home-manager, mangowm, dankmediashell, dms, ... }@inputs: {  
      nixosConfigurations.spyderos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
@@ -30,9 +31,8 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.spyx = import ./spyderos/desktop/home-spyx.nix;
-        	}
-      	];
-    	};
-  	};
-	};
+        }
+      ];
+    };
+  };
 }
