@@ -30,8 +30,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.users.spyx = import ./spyderos/desktop/home-spyx.nix;
-        }
-      ];
-    };
-  };
+        	}
+      	];
+    	};
+  	};
+	}:
 }
