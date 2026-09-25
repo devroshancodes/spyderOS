@@ -12,9 +12,9 @@
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
 			inputs.nixpkgs.follows = "nixpkgs";
-  };
+  	};
 		
-		dankmediashell.url = "github:AvengeMedia/DankMaterialShell";
+		#dankmediashell.url = "github:AvengeMedia/DankMaterialShell";
  
  outputs = { self, nixpkgs, home-manager, mangowm, dankmediashell, ... }@inputs: {  
      nixosConfigurations.spyderos = nixpkgs.lib.nixosSystem {
