@@ -13,11 +13,9 @@
       url = "github:AvengeMedia/DankMaterialShell";
 			inputs.nixpkgs.follows = "nixpkgs";
   	};
-		
-		dankmediashell.url = "github:AvengeMedia/DankMaterialShell";
- };
+};
 
- outputs = { self, nixpkgs, home-manager, mangowm, dankmediashell, dms, ... }@inputs: {  
+ outputs = { self, nixpkgs, home-manager, mangowm, dms, ... }@inputs: {  
      nixosConfigurations.spyderos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       specialArgs = { inherit inputs; };
