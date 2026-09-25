@@ -7,12 +7,13 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
     mangowm.url = "github:mangowm/mango";
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
-			nixpkgs.follows = "nixpkgs";
+			inputs.nixpkgs.follows = "nixpkgs";
   };
-
+		
 		dankmediashell.url = "github:AvengeMedia/DankMaterialShell";
  
  outputs = { self, nixpkgs, home-manager, mangowm, dankmediashell, ... }@inputs: {  
