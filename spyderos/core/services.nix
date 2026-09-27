@@ -10,4 +10,14 @@
 	#enable = true;
 	#compositor.name = "mangowc";
 	#};
+	
+	services.flatpak.enable = true;
+
+	nix.settings = {
+		experimental-features = [ "nix-command" "flakes" ];
+		auto-optimise-store = true;
+
+  # Bypasses sudo requirement for builds
+		trusted-users = [ "root" "spyx" ];
+	};
 }

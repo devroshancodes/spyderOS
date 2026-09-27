@@ -7,12 +7,13 @@
     ./core/bluetooth.nix
     ./core/bootloader.nix
     ./core/btrfs.nix
+		./core/hardware-configuration.nix
 		./core/HDD.nix
 		./core/user.nix
     ./core/networking.nix
 		./core/services.nix
-    ./hardware/intel-skylake.nix
     ./desktop/dms.nix
     ./desktop/mangowm.nix
+    ./hardware/intel-skylake.nix	
   ];
 }
