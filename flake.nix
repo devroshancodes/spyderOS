@@ -29,6 +29,7 @@
 				{
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
+					home-manager.backupFileExtension = "bkup";
           home-manager.users.spyx = import ./spyderos/desktop/home-spyx.nix;
         }
       ];

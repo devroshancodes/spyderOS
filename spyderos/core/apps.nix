@@ -2,44 +2,44 @@
 
 {
 	environment.systemPackages = with pkgs; [
-  bibata-cursors
+	adwaita-qt6 
+	bibata-cursors
+	cmake 
+	compsize
+	exfatprogs
 	eza
-	zoxide 
 	fastfetch 
-	stow 
-	uv 
 	gcc 
 	gnumake 
-	cmake 
-	ninja 
-	meson 
+	gnutar
 	go 
-	ripgrep
+	hdparm
+	iotop-c 
 	kdePackages.qt6ct 
 	kdePackages.qtstyleplugin-kvantum 
-	adwaita-qt6 
-	pciutils 
-	usbutils 
-	iotop-c 
-	strace 
-	lsof 
-	hdparm
-	smartmontools 
-	compsize
-	nvme-cli
 	lm_sensors
+	lsof 
+	meson 
+	ninja 
+	nmap
+	ntfs3g
+	nvme-cli
+	pciutils 
 	podman
 	qemu
-	virt-manager 
-  zip
-	unzip
-	gnutar
-	ntfs3g
-	exfatprogs
-	nmap
+	ripgrep
+	smartmontools 
+	stow 
+	strace 
 	tcpdump
 	traceroute
+	unzip
+	usbutils 
+	uv 
+	virt-manager 
 	whois 
+	zoxide 
+  zip
   ];
 
 	environment.variables = {
@@ -65,15 +65,19 @@
 			proton-ge-bin
 		];
 	};
+
 	programs.nh = {
   	enable = true;
   	clean.enable = true;
   	clean.extraArgs = "--keep-since 4d --keep 3"; # Keep generations from the last 4 days, up to a max of 3
-  	flake = "/home/spyx/spyderOS"; # Point to flake dir
+  	flake = "/home/spyx/spyderOS/.#spyderos"; # Point to flake dir
+	};
+	
+	programs.dconf = {
+		enable = true;
 	};
 
-	qt = {
-		enable = true;
-		platformTheme = "qt5ct";
+	environment.sessionVariables = {
+  	NH_FLAKE = "/home/spyx/spyderOS/.#spyderos";
 	};
 }

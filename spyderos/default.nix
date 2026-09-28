@@ -9,11 +9,13 @@
     ./core/btrfs.nix
 		./core/hardware-configuration.nix
 		./core/HDD.nix
-		./core/user.nix
     ./core/networking.nix
 		./core/services.nix
-    ./desktop/dms.nix
+		./core/user.nix
+    ./core/virtualization.nix
+		./desktop/dms.nix
+		./desktop/jellyfin.nix
     ./desktop/mangowm.nix
-    ./hardware/intel-skylake.nix	
+		./hardware/intel-skylake.nix	
   ];
 }

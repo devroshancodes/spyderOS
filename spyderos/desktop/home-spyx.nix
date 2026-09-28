@@ -44,7 +44,10 @@ let
   home.username = "spyx";
   home.homeDirectory = "/home/spyx";
   home.stateVersion = "26.05";
-  imports = [ ./apps.nix ];
+  imports = [ 
+		./apps.nix
+		./theme.nix
+	];
    
   programs.zsh = {
     enable = true;
