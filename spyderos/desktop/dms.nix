@@ -1,4 +1,6 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }:
+
+{
   programs.dms-shell = {
     enable = true;
 

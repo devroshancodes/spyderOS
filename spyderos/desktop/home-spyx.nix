@@ -44,7 +44,8 @@ let
   home.username = "spyx";
   home.homeDirectory = "/home/spyx";
   home.stateVersion = "26.05";
-  imports = [ 
+  
+	imports = [ 
 		./apps.nix
 		./theme.nix
 	];
@@ -54,8 +55,8 @@ let
     enableCompletion = true;
     syntaxHighlighting.enable = true;
     shellAliases = {
-      spyder-workspace = "home-manager switch --flake /home/spyx/spyderOS/spyderos/desktop/#spyx";
-      spyder-update = "nixos-rebuild switch --flake /home/spyx/spyderOS/.#spyderos --sudo";
+      spyder-workspace = "nh home switch /home/spyx/spyderOS/spyderos/desktop/.#spyx";
+      spyder-update = "nh os switch /home/spyx/spyderOS/.#spyderos";
       spyder-clean = "nix-collect-garbage -d && home-manager expire-generations '-7 days'";
     };
   };

@@ -2,31 +2,32 @@
 
 {
   home.packages = with pkgs; [
-    firefox 
-		chromium
-		vivaldi
-		vscode
-		inkscape
 		alacritty
-		kitty 
-    foot
 		btop
-		yazi
-		mpv
-		vlc
 		cava 
-    obs-studio
+		chromium
+		cliphist
+		firefox 
+    foot
+		inkscape
+		kdePackages.dolphin
+		keepassxc
+		kitty 
+    libreoffice-fresh
+		mpv
+   	nautilus
+	 	obs-studio
+		playerctl
+		remmina
+		scrcpy
 		shotcut
 		transmission_4-gtk
-		steam
-		scrcpy
+		vivaldi
+		vlc
+		vscode
 		wineWow64Packages.stable
 		winetricks 
-    libreoffice-fresh
-		keepassxc
-		remmina
-		playerctl
-		cliphist
+		yazi
   ];
 
 	services.easyeffects = { 

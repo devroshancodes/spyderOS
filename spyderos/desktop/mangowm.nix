@@ -1,14 +1,18 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, ... }:
+
+{
   environment.systemPackages = [
     inputs.mangowm.packages.${pkgs.system}.default
     pkgs.foot pkgs.wl-clipboard
   ];
-  xdg.portal = {
+  
+	xdg.portal = {
     enable = true;
     wlr.enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
     config.common.default = "*";
   };
+
   services.greetd = {
     enable = true;
     settings = {
