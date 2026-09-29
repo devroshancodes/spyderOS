@@ -13,7 +13,6 @@
 		cava 
 		chromium
 		cliphist
-		unstable.firefox-bin 
     foot
 		inkscape
 		kdePackages.dolphin
