@@ -1,5 +1,12 @@
-{ config, pkgs, ... }: 
+{ config, pkgs, lib, ... }:
+	
+	let
+  	# Finds the first user account where 'isNormalUser = true' is declared
+  	normalUsers = lib.filterAttrs (name: user: user.isNormalUser) config.users.users;
+  	firstUser = builtins.elemAt (builtins.attrNames normalUsers) 0;
+  	userHome = config.users.users.${firstUser}.home;
 
+	in
 {
 	environment.systemPackages = with pkgs; [
 	adwaita-qt6 
@@ -70,7 +77,7 @@
   	enable = true;
   	clean.enable = true;
   	clean.extraArgs = "--keep-since 3d --keep 3"; # Keep generations from the last 4 days, up to a max of 3
-  	flake = "/home/spyx/spyderOS/.#spyderos"; # Point to flake dir
+  	flake = "${userHome}.#spyderos"; # Point to flake dir
 	};
 	
 	programs.dconf = {
@@ -78,6 +85,6 @@
 	};
 
 	environment.sessionVariables = {
-  	NH_FLAKE = "/home/spyx/spyderOS/.#spyderos";
+  	NH_FLAKE = "${userHome}.#spyderos";
 	};
 }
