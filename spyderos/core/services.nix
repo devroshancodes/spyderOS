@@ -13,6 +13,11 @@
 	
 	services.flatpak.enable = true;
 
+	services.sunshine = {
+		enable = true;
+		openFirewall = true;
+	};
+
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
 		auto-optimise-store = true;

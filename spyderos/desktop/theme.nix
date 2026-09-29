@@ -55,19 +55,11 @@
 
     # Platform theme integration
     platformTheme.name = "qt5ct"; # Integrates Qt apps with GTK theme settings
-	  
-		# Style engine
-    style = {
-      name = "adwaita-dark"; # Uses Adwaita style engine to mirror GTK
-      package = pkgs.adwaita-qt;
-    };
-  };
-
+	};
   # Ensure required integration packages are installed in user environment
   home.packages = with pkgs; [
     glib # Provides gsettings schema utilities for GTK
     dconf # Stores desktop settings for GTK/GNOME apps
   ];
-
 }
 

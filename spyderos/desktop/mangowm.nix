@@ -2,7 +2,7 @@
 
 {
   environment.systemPackages = [
-    inputs.mangowm.packages.${pkgs.system}.default
+    inputs.mangowm.packages.${pkgs.stdenv.hostPlatform.system}.default
     pkgs.foot pkgs.wl-clipboard
   ];
   

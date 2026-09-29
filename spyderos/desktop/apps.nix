@@ -1,5 +1,11 @@
-{ config, pkgs, ... }: 
-
+{ config, pkgs, inputs, ... }: 
+	let 
+		unstable = import inputs.nixpkgs-unstable {
+			system = pkgs.stdenv.hostPlatform.system;
+			config.allowUnfree = true;
+		};
+	
+	in
 {
   home.packages = with pkgs; [
 		alacritty
@@ -7,7 +13,7 @@
 		cava 
 		chromium
 		cliphist
-		firefox 
+		unstable.firefox-bin 
     foot
 		inkscape
 		kdePackages.dolphin
