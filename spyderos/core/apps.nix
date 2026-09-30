@@ -4,7 +4,7 @@
   	# Finds the first user account where 'isNormalUser = true' is declared
   	normalUsers = lib.filterAttrs (name: user: user.isNormalUser) config.users.users;
   	firstUser = builtins.elemAt (builtins.attrNames normalUsers) 0;
-  	userHome = config.users.users.${firstUser}.home;
+  	userHome = "/home/${firstUser}";
 
 	in
 {
@@ -44,7 +44,8 @@
 	usbutils 
 	uv 
 	virt-manager 
-	whois 
+	whois
+	wlr-randr
 	zoxide 
   zip
   ];
@@ -76,8 +77,8 @@
 	programs.nh = {
   	enable = true;
   	clean.enable = true;
-  	clean.extraArgs = "--keep-since 3d --keep 3"; # Keep generations from the last 4 days, up to a max of 3
-  	flake = "${userHome}.#spyderos"; # Point to flake dir
+  	clean.extraArgs = "--keep-since 2d --keep 2"; # Keep generations from the last 2 days, up to a max of 2
+  	flake = "${userHome}/spyderOS"; # Point to flake dir
 	};
 	
 	programs.dconf = {
@@ -85,6 +86,6 @@
 	};
 
 	environment.sessionVariables = {
-  	NH_FLAKE = "${userHome}.#spyderos";
+  	NH_FLAKE = "${userHome}/spyderOS";
 	};
 }

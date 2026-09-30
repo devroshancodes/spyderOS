@@ -52,14 +52,15 @@
 	# Qt Theming
   qt = {
     enable = true;
-
     # Platform theme integration
-    platformTheme.name = "qt5ct"; # Integrates Qt apps with GTK theme settings
+    platformTheme.name = "qtct"; # Integrates Qt apps with GTK theme settings
 	};
-  # Ensure required integration packages are installed in user environment
+	
+	# Ensure required integration packages are installed in user environment
   home.packages = with pkgs; [
     glib # Provides gsettings schema utilities for GTK
     dconf # Stores desktop settings for GTK/GNOME apps
   ];
+
 }
 

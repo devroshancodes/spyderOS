@@ -18,7 +18,7 @@
 };
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mangowm, dms, ... }@inputs: {  
-  	nixosConfigurations.spyderos = nixpkgs.lib.nixosSystem {
+  	nixosConfigurations.spyxnix = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
     
       modules = [
