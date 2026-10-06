@@ -23,6 +23,14 @@
 	security.audit = {
 		enable = true;
 	};
+	
+	services.openssh = {
+		enable = true;
+		settings = {
+			PermitRootLogin = "no";
+			PasswordAuthentication = false;
+		};
+	};
 
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];

@@ -84,7 +84,8 @@
 	programs.dconf = {
 		enable = true;
 	};
-
+	
+	programs.ssh.startAgent = true;
 	environment.sessionVariables = {
   	NH_FLAKE = "${userHome}/spyderOS";
 	};

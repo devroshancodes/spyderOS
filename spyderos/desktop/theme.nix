@@ -53,7 +53,7 @@
   qt = {
     enable = true;
     # Platform theme integration
-    platformTheme.name = "qtct"; # Integrates Qt apps with GTK theme settings
+    platformTheme.name = "qt5ct"; # Integrates Qt apps with GTK theme settings
 	};
 	
 	# Ensure required integration packages are installed in user environment
