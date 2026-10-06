@@ -5,7 +5,10 @@
     enable = true;
     extraPackages = with pkgs; [ intel-media-driver intel-vaapi-driver libvdpau-va-gl ];
   };
-  #services.tlp = {
+
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+	#services.tlp = {
   #  enable = true;
   #  settings = {
   #    CPU_SCALING_GOVERNOR_ON_AC = "performance";
