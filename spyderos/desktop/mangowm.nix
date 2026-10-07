@@ -35,7 +35,7 @@ let
     enable = true;
     settings = {
       default_session = {
-        command = "${pkgs.greetd}/bin/agreety -c ${mango-session}/bin/mango-session";
+        command = "${pkgs.greetd}/bin/agreety --cmd mango";
         user = "greeter";
       };
     };
