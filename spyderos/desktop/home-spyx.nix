@@ -44,7 +44,8 @@ let
   home.username = "spyx";
   home.homeDirectory = "/home/spyx";
   home.stateVersion = "26.05";
-  
+ 	home.sessionVariables.EDITOR = "nvim";
+
 	imports = [ 
 		./apps.nix
 		./theme.nix

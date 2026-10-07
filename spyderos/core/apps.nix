@@ -35,6 +35,7 @@
 	podman
 	qemu
 	ripgrep
+	rofi
 	smartmontools 
 	stow 
 	strace 
@@ -89,5 +90,6 @@
 	#programs.ssh.startAgent = true;
 	environment.sessionVariables = {
   	NH_FLAKE = "${userHome}/spyderOS";
+		NIXOS_OZONE_WL = "1";
 	};
 }
