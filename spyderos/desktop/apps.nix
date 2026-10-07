@@ -21,7 +21,6 @@
     libreoffice-fresh
 		mpv
    	nautilus
-	 	obs-studio
 		playerctl
 		remmina
 		scrcpy
@@ -37,5 +36,12 @@
 
 	services.easyeffects = { 
 		enable = true;
+	};
+
+	programs.obs-studio = {
+		enable = true;
+		plugins = with pkgs.obs-studio-plugins; [
+			obs-pipewire-audio-capture
+		];
 	};
 }

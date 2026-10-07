@@ -18,4 +18,11 @@
 
 		package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
   };
+	
+	services.displayManager.dms-greeter = {
+		enable = true;
+		compositor.name = "niri";
+		configHome = "/home/spyx";
+	};
+	programs.niri.enable = true;
 }

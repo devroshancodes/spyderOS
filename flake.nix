@@ -10,14 +10,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    mangowm.url = "github:mangowm/mango";
+    mango = {
+			url = "github:mangowm/mango";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
+		};
+
     dms = {
       url = "github:AvengeMedia/DankMaterialShell";
-			inputs.nixpkgs.follows = "nixpkgs";
+			inputs.nixpkgs.follows = "nixpkgs-unstable";
   	};
 };
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mangowm, dms, ... }@inputs: {  
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
   	nixosConfigurations.spyxnix = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
     
