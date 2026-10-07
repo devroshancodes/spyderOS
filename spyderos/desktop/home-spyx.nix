@@ -62,4 +62,20 @@ let
   };
 
   programs.home-manager.enable = true;
+
+	xdg.userDirs = {
+		enable = true;
+		createDirectories = true;
+
+		pictures = "${config.home.homeDirectory}/pictures/Pictures";
+		#public = null;
+		templates = null;
+		music = null;
+		#publicShare = null;
+		videos = "${config.home.homeDirectory}/videos/Videos";
+
+		extraConfig = {
+			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
+		};
+	};
 }
