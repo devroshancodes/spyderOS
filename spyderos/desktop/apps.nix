@@ -23,6 +23,7 @@
 		kdePackages.breeze-gtk
 		kdePackages.dolphin
 		kdePackages.qt6ct
+		kdePackages.qqc2-desktop-style
 		keepassxc
 		kitty 
     libreoffice-fresh
