@@ -21,16 +21,10 @@
     cursorTheme = {
       name = "Bibata-Modern-Ice";
       package = pkgs.bibata-cursors;
-      size = 16;
+      size = 14;
     };
 
-    # Font Settings
-    /*font = {
-     	name = "Sans";
-      size = 11;
-    };
-		*/
-    
+      
 		# Force GTK4 apps to follow dark theme
     gtk4.extraConfig = {
       gtk-application-prefer-dark-theme = 1;
@@ -46,21 +40,15 @@
     x11.enable = true;
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
-    size = 16;
+    size = 14;
   };
 
 	# Qt Theming
   qt = {
     enable = true;
     # Platform theme integration
-    platformTheme.name = "qt5ct"; # Integrates Qt apps with GTK theme settings
+    platformTheme.name = "qtct"; # Integrates Qt apps with GTK theme settings
 	};
-	
-	# Ensure required integration packages are installed in user environment
-  home.packages = with pkgs; [
-    glib # Provides gsettings schema utilities for GTK
-    dconf # Stores desktop settings for GTK/GNOME apps
-  ];
 
 }
 

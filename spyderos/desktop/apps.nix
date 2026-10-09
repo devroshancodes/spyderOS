@@ -8,17 +8,25 @@
 	in
 {
   home.packages = with pkgs; [
+		adwaita-qt
+		adwaita-qt6
 		alacritty
 		btop
 		cava 
 		chromium
 		cliphist
+		dconf
     foot
+		glib
 		inkscape
+		kdePackages.breeze
+		kdePackages.breeze-gtk
 		kdePackages.dolphin
+		kdePackages.qt6ct
 		keepassxc
 		kitty 
     libreoffice-fresh
+		libsForQt5.qt5ct
 		mpv
    	nautilus
 		playerctl

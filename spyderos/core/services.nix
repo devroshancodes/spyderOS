@@ -5,11 +5,8 @@
 			HandlePowerKey="suspend";
 			KillUserProcesses=true;
 	};
+
 	services.upower.enable = true;
-	#services.displayManager.dms-greeter = {
-	#enable = true;
-	#compositor.name = "mangowc";
-	#};
 	
 	services.flatpak.enable = true;
 
@@ -39,4 +36,5 @@
   # Bypasses sudo requirement for builds
 		trusted-users = [ "root" "spyx" ];
 	};
+
 }

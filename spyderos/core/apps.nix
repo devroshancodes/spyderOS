@@ -9,7 +9,6 @@
 	in
 {
 	environment.systemPackages = with pkgs; [
-	adwaita-qt6 
 	bibata-cursors
 	cmake 
 	compsize
@@ -22,8 +21,6 @@
 	go 
 	hdparm
 	iotop-c 
-	kdePackages.qt6ct 
-	kdePackages.qtstyleplugin-kvantum 
 	lm_sensors
 	lsof 
 	meson 
@@ -53,7 +50,7 @@
   ];
 
 	environment.variables = {
-		XCURSOR_THEME = "Bibata-Modern-Classic";
+		XCURSOR_THEME = "Bibata-Modern-Ice";
 		XCURSOR_SIZE = "14";
 	};
 
