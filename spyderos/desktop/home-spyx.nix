@@ -4,6 +4,7 @@ let
     dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";
     
     configDirs = [
+	"niri"
 	"mango"
 	"kitty"
 	"nvim"

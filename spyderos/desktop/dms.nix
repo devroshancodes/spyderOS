@@ -24,5 +24,11 @@
 		compositor.name = "niri";
 		configHome = "/home/spyx";
 	};
+	
+	systemd.services.greetd.environment = {
+		XCURSOR_THEME = "Bibata-Modern-Ice";
+		XCURSOR_SIZE = "16";
+	};
+
 	programs.niri.enable = true;
 }
