@@ -2,8 +2,6 @@
 
 let
     dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";
-		cache = "/var/cache/dms-greeter";
-		link = config.lib.file.mkOutOfStoreSymlink;
     
     configDirs = [
 	"niri"
@@ -88,10 +86,10 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
-	 xdg.configFile = {
-    "DankMaterialShell/settings.json".source = link "${cache}/settings.json";
-    "DankMaterialShell/session.json".source  = link "${cache}/session.json";
-    "DankMaterialShell/dms-colors.json".source = link "${cache}/dms-colors.json";
-  };
-	
-	}
+	systemd.user.tmpfiles.rules = [
+		"L+ /var/cache/dms-greeter/settings.json - - - - /home/spyx/.config/DankMaterialShell/settings.json"
+		"L+ /var/cache/dms-greeter/session.json - - - - /home/spyx/.local/state/DankMaterialShell/session.json"
+		"L+ /var/cache/dms-greeter/dms-color.json - - - - /home/spyx/.cache/DankMaterialShell/dms-colors.json"
+	];
+
+}

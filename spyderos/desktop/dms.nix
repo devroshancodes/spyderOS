@@ -31,7 +31,7 @@
 	};
 	
 	systemd.tmpfiles.rules = [
-		"d /var/cache/dms-greeter 0755 root root -"
+		"d /var/cache/dms-greeter 2755 spyx greeter - -"
 	];
 	
 	programs.niri.enable = true;
