@@ -3,7 +3,7 @@
 {
    users.users.spyx = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" ];
+    extraGroups = [ "wheel" "networkmanager" "video" "audio" "greeter" ];
     shell = pkgs.zsh; 
   };
 
