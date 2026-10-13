@@ -33,24 +33,6 @@
 				hide-after-inactive-ms 10000
 			}
 
-// Input devices settings.
-input {
-	keyboard {
-		
-		xkb {
-			layout "us"
-		}
-		
-		// Enable numlock on startup. Omitting disables it.
-		numlock
-		}
-	
-	// Touchpad settings. Tap-to-click.
-	touchpad {
-		tap
-		dwt
-		}
-	
 		'';
 
 	};
