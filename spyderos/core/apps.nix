@@ -12,6 +12,7 @@
 	bibata-cursors
 	cmake 
 	compsize
+	direnv
 	exfatprogs
 	eza
 	fastfetch 
@@ -25,6 +26,7 @@
 	lsof 
 	meson 
 	ninja 
+	nix-direnv
 	nmap
 	ntfs3g
 	nvme-cli
