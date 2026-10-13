@@ -30,6 +30,10 @@
 		XCURSOR_SIZE = "16";
 	};
 	
+	systemd.tmpfiles.rules = [
+		"d /var/cache/dms-greeter 0755 root root -"
+	];
+	
 	programs.niri.enable = true;
 
 }
