@@ -2,6 +2,8 @@
 
 let
     dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";
+		cache = "/var/cache/dms-greeter";
+		link = config.lib.file.mkOutOfStoreSymlink;
     
     configDirs = [
 	"niri"
@@ -86,17 +88,10 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
-
-	home.activation = {
-    linkDmsGreeterCache = config.lib.dag.entryAfter ["writeBoundary"] ''
-      # This script runs directly after Home Manager generates your home files
-      # $DRY_RUN_CMD safely handles dry-runs (like nh os test)
-      
-      echo "Setting up dms-greeter cache symlinks..."
-      $DRY_RUN_CMD sudo ln -sf /home/spyx/.config/DankMaterialShell/settings.json /var/cache/dms-greeter/settings.json
-      $DRY_RUN_CMD sudo ln -sf /home/spyx/.local/state/DankMaterialShell/session.json /var/cache/dms-greeter/session.json
-      $DRY_RUN_CMD sudo ln -sf /home/spyx/.cache/quickshell/dankshell/dms-colors.json /var/cache/dms-greeter/colors.json
-    '';
+	 xdg.configFile = {
+    "DankMaterialShell/settings.json".source = link "${cache}/settings.json";
+    "DankMaterialShell/session.json".source  = link "${cache}/session.json";
+    "DankMaterialShell/dms-colors.json".source = link "${cache}/dms-colors.json";
   };
-
-}
+	
+	}
