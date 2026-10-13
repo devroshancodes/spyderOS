@@ -86,9 +86,17 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
-	systemd.user.tmpfiles.rules = [
-		"L+ /var/cache/dms-greeter/settings.json ---- /home/spyx/.config/DankMaterialShell/settings.json"
-		"L+ /var/cache/dms-greeter/session.json ---- /home/spyx/.config/DankMaterialShell/session.json"
-		"L+ /var/cache/dms-greeter/dms-color.json ---- /home/spyx/.config/DankMaterialShell/dms-color.json"
-	];
+
+	home.activation = {
+    linkDmsGreeterCache = config.lib.dag.entryAfter ["writeBoundary"] ''
+      # This script runs directly after Home Manager generates your home files
+      # $DRY_RUN_CMD safely handles dry-runs (like nh os test)
+      
+      echo "Setting up dms-greeter cache symlinks..."
+      $DRY_RUN_CMD sudo ln -sf /home/spyx/.config/DankMaterialShell/settings.json /var/cache/dms-greeter/settings.json
+      $DRY_RUN_CMD sudo ln -sf /home/spyx/.local/state/DankMaterialShell/session.json /var/cache/dms-greeter/session.json
+      $DRY_RUN_CMD sudo ln -sf /home/spyx/.cache/quickshell/dankshell/dms-colors.json /var/cache/dms-greeter/colors.json
+    '';
+  };
+
 }
