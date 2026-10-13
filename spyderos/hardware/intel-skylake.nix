@@ -5,7 +5,7 @@
     enable = true;
     extraPackages = with pkgs; [ intel-media-driver intel-vaapi-driver libvdpau-va-gl ];
   };
-
+	hardware.brillo.enable = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
 	#services.tlp = {

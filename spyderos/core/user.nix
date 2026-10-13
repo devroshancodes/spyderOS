@@ -7,5 +7,9 @@
     shell = pkgs.zsh; 
   };
 
+	users.users.greeter = {
+		extraGroups = [ "video" ];
+	};
+
   system.stateVersion = "26.05";
 }

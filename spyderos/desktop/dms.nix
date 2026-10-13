@@ -32,9 +32,7 @@
 	
 				hide-after-inactive-ms 10000
 			}
-
 		'';
-
 	};
 	
 	systemd.services.greetd.environment = {
