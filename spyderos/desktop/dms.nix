@@ -21,18 +21,8 @@
 	
 	services.displayManager.dms-greeter = {
 		enable = true;
-		compositor.name = "niri";
+		compositor.name = "mangowc";
 		configHome = "/home/spyx";
-		compositor.customConfig = ''
-			cursor {
-	
-				xcursor-theme "Bibata-Modern-Ice"
-	
-				xcursor-size 24
-	
-				hide-after-inactive-ms 10000
-			}
-		'';
 	};
 	
 	systemd.services.greetd.environment = {

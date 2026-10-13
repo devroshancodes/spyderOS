@@ -9,6 +9,7 @@
 	in
 {
 	environment.systemPackages = with pkgs; [
+	brightnessctl
 	bibata-cursors
 	cmake 
 	compsize
