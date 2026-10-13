@@ -64,7 +64,8 @@
 	corefonts
 	nerd-fonts.fira-code 
 	noto-fonts-color-emoji
-  source-code-pro 
+  source-code-pro
+	vista-fonts
 	];
   
 	programs.zsh.enable = true;
