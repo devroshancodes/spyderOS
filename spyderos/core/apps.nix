@@ -60,8 +60,12 @@
 
 
   fonts.packages = with pkgs; [
-  comfortaa source-code-pro nerd-fonts.fira-code noto-fonts-color-emoji
-  ];
+  comfortaa
+	corefonts
+	nerd-fonts.fira-code 
+	noto-fonts-color-emoji
+  source-code-pro 
+	];
   
 	programs.zsh.enable = true;
 	programs.localsend.enable = true;
