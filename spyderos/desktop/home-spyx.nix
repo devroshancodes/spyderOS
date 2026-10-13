@@ -86,4 +86,10 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
+	systemd.user.tmpfiles.rules = [
+		"d /var/cache/dms-greeter 0755 root root -"
+		"L+ /var/cache/dms-greeter/settings.json ---- /home/spyx/.config/DankMaterialShell/settings.json"
+		"L+ /var/cache/dms-greeter/session.json ---- /home/spyx/.config/DankMaterialShell/session.json"
+		"L+ /var/cache/dms-greeter/dms-color.json ---- /home/spyx/.config/DankMaterialShell/dms-color.json"
+	];
 }
