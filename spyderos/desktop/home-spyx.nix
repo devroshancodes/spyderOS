@@ -61,10 +61,13 @@ let
       spyder-update = "nh os switch /home/spyx/spyderOS/.#spyderos";
       spyder-clean = "nix-collect-garbage -d && home-manager expire-generations '-7 days'";
     };
-		interactiveShellInit = ''
-			eval "$(direnv hook zsh)"
-		'';
   };
+	
+	programs.direnv = {
+		enable = true;
+		enableZshIntegration = true;
+		nix-direnv.enable = true;
+	};
 
   programs.home-manager.enable = true;
 

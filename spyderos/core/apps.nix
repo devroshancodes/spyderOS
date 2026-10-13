@@ -32,6 +32,7 @@
 	nvme-cli
 	pciutils 
 	podman
+	pwvucontrol
 	qemu
 	ripgrep
 	rofi
