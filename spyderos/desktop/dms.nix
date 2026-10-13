@@ -23,16 +23,43 @@
 		enable = true;
 		compositor.name = "niri";
 		configHome = "/home/spyx";
+		compositor.customConfig = ''
+			cursor {
+	
+				xcursor-theme "Bibata-Modern-Ice"
+	
+				xcursor-size 24
+	
+				hide-after-inactive-ms 10000
+			}
+
+// Input devices settings.
+input {
+	keyboard {
+		
+		xkb {
+			layout "us"
+		}
+		
+		// Enable numlock on startup. Omitting disables it.
+		numlock
+		}
+	
+	// Touchpad settings. Tap-to-click.
+	touchpad {
+		tap
+		dwt
+		}
+	
+		'';
+
 	};
 	
 	systemd.services.greetd.environment = {
 		XCURSOR_THEME = "Bibata-Modern-Ice";
-		XCURSOR_SIZE = "16";
+		XCURSOR_SIZE = "24";
+		XCURSOR_PATH = "/run/current-system/sw/share/icons";
 	};
-	
-	systemd.tmpfiles.rules = [
-		"d /var/cache/dms-greeter 2755 spyx greeter - -"
-	];
 	
 	programs.niri.enable = true;
 

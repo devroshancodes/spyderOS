@@ -4,7 +4,7 @@ let
     dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";
     
     configDirs = [
-	"niri"
+	#"niri"
 	"mango"
 	"kitty"
 	"nvim"
@@ -86,10 +86,5 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
-	systemd.user.tmpfiles.rules = [
-		"L+ /var/cache/dms-greeter/settings.json - - - - /home/spyx/.config/DankMaterialShell/settings.json"
-		"L+ /var/cache/dms-greeter/session.json - - - - /home/spyx/.local/state/DankMaterialShell/session.json"
-		"L+ /var/cache/dms-greeter/dms-color.json - - - - /home/spyx/.cache/DankMaterialShell/dms-colors.json"
-	];
-
+	
 }
