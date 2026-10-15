@@ -28,7 +28,7 @@
 	
 				xcursor-theme "Bibata-Modern-Ice"
 	
-				xcursor-size 24
+				xcursor-size 16
 	
 				hide-after-inactive-ms 10000
 			}
@@ -37,7 +37,7 @@
 	
 	systemd.services.greetd.environment = {
 		XCURSOR_THEME = "Bibata-Modern-Ice";
-		XCURSOR_SIZE = "24";
+		XCURSOR_SIZE = "16";
 		XCURSOR_PATH = "/run/current-system/sw/share/icons";
 	};
 	

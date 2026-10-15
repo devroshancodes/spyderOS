@@ -28,6 +28,7 @@
 		kitty 
     libreoffice-fresh
 		libsForQt5.qt5ct
+		loupe
 		mpv
    	nautilus
 		playerctl
