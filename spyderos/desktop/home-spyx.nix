@@ -41,13 +41,8 @@ let
         source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${dir}";
 	};
 	}) configDirs);
-  
-  home.username = "spyx";
-  home.homeDirectory = "/home/spyx";
-  home.stateVersion = "26.05";
- 	home.sessionVariables.EDITOR = "nvim";
-
-	imports = [ 
+ 
+ imports = [ 
 		./apps.nix
 		./theme.nix
 	];
@@ -86,5 +81,17 @@ let
 			XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
 		};
 	};
+	
+	xdg.mimeApps = {
+		enable = true;
+		defaultApplications = {
+			"image/*" = [ "org.gnome.Loupe.desktop" ];
+		};
+	};
+
+  home.username = "spyx";
+  home.homeDirectory = "/home/spyx";
+  home.stateVersion = "26.05";
+ 	home.sessionVariables.EDITOR = "nvim";
 
 }
