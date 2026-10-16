@@ -67,7 +67,31 @@ let
         source = config.lib.file.mkOutOfStoreSymlink "${dotfilesPath}/${dir}";
 			};
 		}) configDirs);
-  
+ 	
+		xdg.userDirs = {
+			enable = true;
+			createDirectories = true;
+
+			pictures = "${config.home.homeDirectory}/pictures/Pictures";
+			#public = null;
+			templates = null;
+			music = null;
+			#publicShare = null;
+			videos = "${config.home.homeDirectory}/videos/Videos";
+
+			extraConfig = {
+				XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
+			};
+		};
+	
+		xdg.mimeApps = {
+			enable = true;
+			defaultApplications = 
+				(lib.genAttrs imageTypes (_: loupe)) //
+				(lib.genAttrs webBrowser (_: vivaldi));
+			
+		}; 
+
   	programs.zsh = {
     	enable = true;
     	enableCompletion = true;
@@ -87,29 +111,7 @@ let
 
   	programs.home-manager.enable = true;
 
-		xdg.userDirs = {
-			enable = true;
-			createDirectories = true;
 
-			pictures = "${config.home.homeDirectory}/pictures/Pictures";
-			#public = null;
-			templates = null;
-			music = null;
-			#publicShare = null;
-			videos = "${config.home.homeDirectory}/videos/Videos";
-
-			extraConfig = {
-				XDG_SCREENSHOTS_DIR = "${config.home.homeDirectory}/pictures/Pictures/Screenshots";
-			};
-		};
-	
-		xdg.mimeApps = {
-			enable = true;
-			defaultApplications = { 
-				lib.genAttrs imageTypes (_: loupe);
-				lib.genAttrs webBrowser (_: vivaldi);
-			};
-		};
 
   	home.username = "spyx";
   	home.homeDirectory = "/home/spyx";
