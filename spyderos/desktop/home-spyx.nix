@@ -1,8 +1,7 @@
 { config, pkgs, lib, ... }: 
 
 let
-  dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";
-    
+  dotfilesPath = "${config.home.homeDirectory}/dotfile/.config";  
   configDirs = [
 		#"niri"
 		"mango"
@@ -35,7 +34,6 @@ let
     ];
 
 	loupe = "org.gnome.Loupe.desktop";
-
 	imageTypes = [
 		"image/jpeg" 
 		"image/png" 
@@ -48,6 +46,13 @@ let
     "image/heic" 
 		"image/jxl"
   ];
+	
+	vivaldi = "vivaldi-stable.desktop";
+	webBrowser = [
+	"x-scheme-handler/http"
+	"x-scheme-handler/https"
+	"text/html"
+	];
 
  in
   {
@@ -100,7 +105,10 @@ let
 	
 		xdg.mimeApps = {
 			enable = true;
-			defaultApplications = lib.genAttrs imageTypes (_: loupe);		
+			defaultApplications = { 
+				lib.genAttrs imageTypes (_: loupe);
+				lib.genAttrs webBrowser (_: vivaldi);
+			};
 		};
 
   	home.username = "spyx";
