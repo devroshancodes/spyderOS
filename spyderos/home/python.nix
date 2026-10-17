@@ -1,11 +1,10 @@
 { pkgs, ... }:
 
 let
-	myPython = pkgs.python3.withPackages (ps: with ps: [
+	myPython = pkgs.python3.withPackages (ps: with ps; [
 		requests
 		pandas
 		textual
-		argparse
 	]);
 
 	in
