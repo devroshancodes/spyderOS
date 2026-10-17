@@ -13,6 +13,9 @@
 			lua-language-server
 			pyright
 			clang-tools
+			vscode-langservers-extracted
+			cmake-language-server
+			rust-analyzer
 		];
 		sideloadInitLua = true;
 	};
