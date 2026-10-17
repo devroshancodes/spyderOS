@@ -118,6 +118,7 @@ let
       		symbol = " ";
       		detect_extensions = [ "py" ];
       		detect_files = [ ".python-version" "pyproject.toml" "requirements.txt" ];
+				};
 				format = "[╭─](bold bright-black)$directory$git_branch$python$nix_shell\n[╰─](bold bright-black)$character";	
     		right_format = "$cmd_duration";
 				cmd_duration = {
