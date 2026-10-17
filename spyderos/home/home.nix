@@ -112,19 +112,21 @@ let
 		programs.starship = {
     	enable = true;
     	enableZshIntegration = true;
-    	settings = {
-      	add_newline = false;
-      	character = {
-        	success_symbol = "[➜](bold green)";
-        	error_symbol = "[➜](bold red)";
-      	};
+    	
+			settings = {
+				python = {
+      		symbol = " ";
+      		detect_extensions = [ "py" ];
+      		detect_files = [ ".python-version" "pyproject.toml" "requirements.txt" ];
+				format = "[╭─](bold bright-black)$directory$git_branch$python$nix_shell\n[╰─](bold bright-black)$character";	
+    		right_format = "$cmd_duration";
+				cmd_duration = {
+					min_time = 300;
+					format = "⏱️ [$duration](bold yellow) ";
+					style = "bold yellow";
+				};
 			};
-      # Configure custom modules (e.g., nix_shell)
-      nix_shell = {
-        symbol = "❄️ ";
-        format = "via [$symbol$state]($style) ";
-      };
-    };
+		};
 
 		programs.direnv = {
 			enable = true;
