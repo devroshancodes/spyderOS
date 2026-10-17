@@ -20,6 +20,8 @@ let
 			settings = {
 				python-preference = "only-system";
 				python-downloads = "never";
+			};
 		};
+
 		home.sessionVariables.UV_PYTHON = "3.13";
 	}
