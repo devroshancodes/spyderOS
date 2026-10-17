@@ -99,6 +99,11 @@ let
       	spyder-workspace = "nh home switch /home/spyx/spyderOS/spyderos/desktop/.#spyx";
       	spyder-update = "nh os switch /home/spyx/spyderOS/.#spyderos";
       	spyder-clean = "nix-collect-garbage -d && home-manager expire-generations '-7 days'";
+			initContent = ''
+				if [[ -o interactive && -z $"FASTFETCH_SHOWN" ]]; then
+				export FASTFETCH_SHOWN=1
+				fastfetch
+			'';
     	};
   	};
 	
@@ -107,10 +112,16 @@ let
 			enableZshIntegration = true;
 			nix-direnv.enable = true;
 		};
+	
+		programs.zoxide = {
+			enable = true;
+			enableZshIntegration = true;
+			options = [ "--cmd cd" ];
+		};
+  	
+		programs.fastfetch.enable = true;
 
-  	programs.home-manager.enable = true;
-
-
+		programs.home-manager.enable = true;
 
   	home.username = "spyx";
   	home.homeDirectory = "/home/spyx";
