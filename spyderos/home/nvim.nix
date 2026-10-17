@@ -7,10 +7,6 @@
 		vimAlias = true;
 
 		extraPackages = with pkgs; [
-			git
-			gnumake
-			gcc
-			ripgrep
 			fd
 			stylua
 			lua-language-server

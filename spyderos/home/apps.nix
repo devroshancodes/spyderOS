@@ -40,7 +40,8 @@
 		vlc
 		vscode
 		wineWow64Packages.stable
-		winetricks 
+		winetricks
+		wireshark
 		yazi
   ];
 
