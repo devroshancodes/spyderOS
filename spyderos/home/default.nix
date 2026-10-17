@@ -4,5 +4,6 @@
 	imports = [
 		./apps.nix
 		./theme.nix
+		./nvim.nix
 	];
 }
