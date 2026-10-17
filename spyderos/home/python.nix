@@ -9,22 +9,17 @@ let
 
 	in
 	{
-		home.packages = [
+		home.packages = with pkgs; [
 			myPython
+			ruff
+			httpie
 		];
 		
 		programs.uv = {
 			enable = true;
-			python = {
-				versions = [ "3.12" "3.13" ];
-				default = [ "3.13" ];
-				prune = true;
-			};
-			tool = {
-				packages = [
-					"ruff"
-					"httpie"
-				];
-			};
+			settings = {
+				python-preference = "only-system";
+				python-downloads = "never";
 		};
+		home.sessionVariables.UV_PYTHON = "3.13";
 	}
