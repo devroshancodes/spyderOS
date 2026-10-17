@@ -16,6 +16,7 @@ let
 		"btop"
 		"cava"
 		"easyeffects"
+		"fastfetch"
 		"fish"
 		"foot"
 		"gammastep"
@@ -96,15 +97,16 @@ let
     	enableCompletion = true;
     	syntaxHighlighting.enable = true;
     	shellAliases = {
-      	spyder-workspace = "nh home switch /home/spyx/spyderOS/spyderos/desktop/.#spyx";
-      	spyder-update = "nh os switch /home/spyx/spyderOS/.#spyderos";
-      	spyder-clean = "nix-collect-garbage -d && home-manager expire-generations '-7 days'";
+      	spybuild = "nh os build";
+      	spyupdate = "nh os switch";
+			};
+
 			initContent = ''
-				if [[ -o interactive && -z $"FASTFETCH_SHOWN" ]]; then
-				export FASTFETCH_SHOWN=1
-				fastfetch
+				if [[ -o interactive && -z "$FASTFETCH_SHOWN" ]]; then
+					export FASTFETCH_SHOWN=1
+					fastfetch
+				fi
 			'';
-    	};
   	};
 	
 		programs.direnv = {

@@ -5,5 +5,6 @@
 		./apps.nix
 		./theme.nix
 		./nvim.nix
+		./python.nix
 	];
 }
