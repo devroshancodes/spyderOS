@@ -1,4 +1,5 @@
 { config, pkgs, libs, ... }:
+
 {
 	programs.neovim = {
 		enable = true;
@@ -13,5 +14,6 @@
 			pyright
 			clang-tools
 		];
+		sideloadInitLua = true;
 	};
 }
