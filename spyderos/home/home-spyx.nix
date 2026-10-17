@@ -57,8 +57,7 @@ let
  in
   {
 		imports = [ 
-			./apps.nix
-			./theme.nix
+			./default.nix
 		];
 
     xdg.configFile = builtins.listToAttrs (map (dir: {
