@@ -32,6 +32,7 @@
 		mpv
    	nautilus
 		playerctl
+		qalculate-qt
 		remmina
 		scrcpy
 		shotcut
