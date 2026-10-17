@@ -108,7 +108,24 @@ let
 				fi
 			'';
   	};
-	
+		
+		programs.starship = {
+    	enable = true;
+    	enableZshIntegration = true;
+    	settings = {
+      	add_newline = false;
+      	character = {
+        	success_symbol = "[➜](bold green)";
+        	error_symbol = "[➜](bold red)";
+      	};
+			};
+      # Configure custom modules (e.g., nix_shell)
+      nix_shell = {
+        symbol = "❄️ ";
+        format = "via [$symbol$state]($style) ";
+      };
+    };
+
 		programs.direnv = {
 			enable = true;
 			enableZshIntegration = true;
