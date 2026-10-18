@@ -21,7 +21,7 @@
 	boot.supportedFilesystems = [ "exfat" ];
 
 	systemd.settings.Manager = { 
-		"DefaultTimeoutStopSec=10s"
+		DefaultTimeoutStopSec = "10s"
 	};
 
 	home-manager.users.spyx = { config, ... }: {
