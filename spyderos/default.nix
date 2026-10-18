@@ -9,7 +9,7 @@
     ./system/btrfs.nix
 		./system/dms.nix
 		./system/hardware-configuration.nix
-		./system/HDD.nix
+		./system/hdd.nix
 		./system/jellyfin.nix
     ./system/mangowm.nix
     ./system/networking.nix

@@ -14,7 +14,7 @@
           -p 8096:8096 \
           -v /home/spyx/jellyfin/config:/config:Z \
           -v /home/spyx/jellyfin/cache:/cache:Z \
-          -v /mnt/HDD/Videos:/media:ro,z \
+          -v /mnt/hdd/Videos:/media:ro,z \
           docker.io/jellyfin/jellyfin:latest
       '';
       ExecStop = "${pkgs.podman}/bin/podman stop -t 10 jellyfin";
