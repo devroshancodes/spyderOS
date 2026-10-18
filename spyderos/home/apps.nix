@@ -42,7 +42,6 @@
 		vscode
 		wineWow64Packages.stable
 		winetricks
-		wireshark
 		yazi
   ];
 

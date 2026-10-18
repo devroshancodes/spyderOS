@@ -69,8 +69,11 @@
 	];
   
 	programs.zsh.enable = true;
+	
 	programs.localsend.enable = true;
+	
 	programs.kdeconnect.enable = true;
+	
 	programs.git.enable = true;
 	
 	programs.steam = {
@@ -98,6 +101,13 @@
 		enable = true;
 	};
 	
+	programs.wireshark = {
+		enable = true;
+		package = [ "pkgs.wireshark" "pkgs.wireshark-cli" ];
+		dumpcap.enable = true;
+		usbmon.enable = true;
+	};
+
 	#programs.ssh.startAgent = true;
 	environment.sessionVariables = {
   	NH_FLAKE = "${userHome}/spyderOS";
