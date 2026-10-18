@@ -24,6 +24,10 @@
 		compositor.name = "niri";
 		configHome = "/home/spyx";
 		compositor.customConfig = ''
+			hotkey-overlay {
+				skip-at-startup
+			}
+
 			cursor {
 	
 				xcursor-theme "Bibata-Modern-Ice"
