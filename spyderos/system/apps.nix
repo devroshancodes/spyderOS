@@ -103,4 +103,5 @@
   	NH_FLAKE = "${userHome}/spyderOS";
 		NIXOS_OZONE_WL = "1";
 	};
+
 }
