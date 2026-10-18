@@ -15,6 +15,7 @@
           -v /home/spyx/jellyfin/config:/config:Z \
           -v /home/spyx/jellyfin/cache:/cache:Z \
           -v /mnt/hdd/Videos:/media:ro,z \
+					-v /mnt/hdd/Pictures:/pictures:ro,z \
           docker.io/jellyfin/jellyfin:latest
       '';
       ExecStop = "${pkgs.podman}/bin/podman stop -t 10 jellyfin";
