@@ -103,7 +103,10 @@
 	
 	programs.wireshark = {
 		enable = true;
-		package = [ "pkgs.wireshark" "pkgs.wireshark-cli" ];
+		package = [ 
+			pkgs.wireshark 
+			pkgs.wireshark-cli 
+		];
 		dumpcap.enable = true;
 		usbmon.enable = true;
 	};
