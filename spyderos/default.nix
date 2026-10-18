@@ -5,7 +5,7 @@
     ./system/apps.nix
     ./system/audio.nix
     ./system/bluetooth.nix
-    ./system/bootloader.nix
+    ./system/boot.nix
     ./system/btrfs.nix
 		./system/dms.nix
 		./system/hardware-configuration.nix
