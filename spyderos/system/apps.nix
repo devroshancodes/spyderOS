@@ -85,9 +85,13 @@
 
 	programs.nh = {
   	enable = true;
-  	clean.enable = true;
-  	clean.extraArgs = "--keep-since 2d --keep 2"; # Keep generations from the last 2 days, up to a max of 2
-  	flake = "${userHome}/spyderOS"; # Point to flake dir
+  	clean = {
+			enable = true;
+			dates = "weekly"; 
+  		extraArgs = "--keep-since 2d --keep 2";
+		}; 
+
+		flake = "${userHome}/spyderOS"; # Point to flake dir
 	};
 	
 	programs.dconf = {
