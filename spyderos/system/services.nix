@@ -38,6 +38,17 @@
 		};
 	};
 
+	# Enable Avahi for network printer discovery
+	services.avahi = {
+  	enable = true;
+  	nssmdns4 = true;
+  	openFirewall = true;
+	};
+
+	services.printing = {
+		enable = true;
+	};
+
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
 		auto-optimise-store = true;
