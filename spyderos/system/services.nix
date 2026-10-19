@@ -16,6 +16,7 @@
 	};
 	
 	security.auditd.enable = true;	
+
 	systemd.services.disable-xhc-wakeup	= {
 		description = "Disable XHC sleep wakeup trigger";
   	wantedBy = [ "multi-user.target" ];
@@ -48,6 +49,22 @@
 	services.printing = {
 		enable = true;
 	};
+
+	system.autoUpgrade = {
+    enable = true;
+    flake = "/home/spyx/spyderOS/.#spyxnix"; # Ensure this points to your actual flake directory on disk
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L"
+    ];
+
+    # Update exactly on Mon at 07:00:00 local time
+    dates = "Mon *-*-* 07:00:00"; 
+
+    # Spread the download load across a 15-minute window
+    randomizedDelaySec = "15min"; 
+  };
 
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
