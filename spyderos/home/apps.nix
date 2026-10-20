@@ -29,6 +29,7 @@
     libreoffice-fresh
 		libsForQt5.qt5ct
 		loupe
+		moor
 		mpv
    	nautilus
 		playerctl
