@@ -145,7 +145,7 @@ let
 
 		programs.home-manager.enable = true;
 		
-		home.sessionVariable = {
+		home.sessionVariables = {
 			PAGER = "moor";
 		};
 
