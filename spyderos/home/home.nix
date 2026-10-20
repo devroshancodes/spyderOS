@@ -144,6 +144,10 @@ let
 		programs.fastfetch.enable = true;
 
 		programs.home-manager.enable = true;
+		
+		home.sessionVariable = {
+			PAGER = "moor";
+		};
 
   	home.username = "spyx";
   	home.homeDirectory = "/home/spyx";
