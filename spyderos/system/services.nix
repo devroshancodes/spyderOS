@@ -65,6 +65,8 @@
     # Spread the download load across a 15-minute window
     randomizedDelaySec = "15min"; 
   };
+	
+	services.fwupd.enable = true;
 
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];
