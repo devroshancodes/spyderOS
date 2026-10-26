@@ -11,10 +11,12 @@
 
 	networking.firewall = {
 		enable = true;
+
+		checkReversePath = "loose";
 		
-		allowedTCPPorts = [ 22 ];
+		allowedTCPPorts = [ 22 53 ];
 		
-		allowedUDPPorts = [ ];
+		allowedUDPPorts = [ 53 67];
 
 		#trustedInterfaces = [];
 	};

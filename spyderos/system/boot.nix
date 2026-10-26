@@ -12,4 +12,6 @@
 		"zswap.zpool=zsmalloc"
 		"zswap.max_pool_percent=15"
 	];
+
+	boot.kernel.sysctl."net.ipv4.ip_forward" = 1;
 }
