@@ -8,6 +8,18 @@
 	in
 {
   home.packages = with pkgs; [
+		(vivaldi.override {
+			proprietaryCodecs = true;
+			enableWidevine = true;
+			commandLineArgs = lib.concatStringsSep " " [
+				"--ozone-platform=wayland"
+        "--enable-wayland-ime=true"
+        "--ignore-gpu-blocklist"
+        "--enable-gpu-rasterization"
+        "--enable-zero-copy"
+        "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks"
+      ];
+		})
 		adwaita-qt
 		adwaita-qt6
 		alacritty
@@ -37,7 +49,6 @@
 		scrcpy
 		shotcut
 		transmission_4-gtk
-		vivaldi
 		vlc
 		vscode
 		wineWow64Packages.stable
