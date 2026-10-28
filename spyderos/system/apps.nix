@@ -75,7 +75,10 @@
 	
 	programs.kdeconnect.enable = true;
 	
-	programs.git.enable = true;
+	pprograms.git = {
+  	enable = true;
+  	config.safe.directory = [ "/home/spyx/spyderOS" ];
+	};
 	
 	programs.steam = {
 		enable = true;

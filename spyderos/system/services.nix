@@ -49,15 +49,28 @@
 	services.printing = {
 		enable = true;
 	};
+	
+	systemd.services.flake-update = {
+		serviceConfig = {
+			Type = "oneshot";
+			User = "spyx";
+			WorkingDirectory = "/home/spyx/spyderOS";
+		};
+		path = [ pkgs.nix pkgs.git ];
+		script = ''
+			nix --extra-experimentl-features 'nix-command flakes' flake update nixpkgs
+		'';
+	};
 
+	systemd.services.nixos-upgrade = {
+  	wants = [ "flake-update.service" ];
+  	after = [ "flake-update.service" ];
+	};
+		
 	system.autoUpgrade = {
     enable = true;
-    flake = "/home/spyx/spyderOS/.#spyxnix"; # Ensure this points to your actual flake directory on disk
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-    ];
+    flake = "/home/spyx/spyderOS#spyxnix"; # Ensure this points to your actual flake directory on disk
+    flags = [ "-L" ];
 
     # Update exactly on Mon at 07:00:00 local time
     dates = "Mon *-*-* 07:00:00"; 
