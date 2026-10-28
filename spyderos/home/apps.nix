@@ -8,7 +8,7 @@
 	in
 {
   home.packages = with pkgs; [
-		(vivaldi.override {
+		(unstable.vivaldi.override {
 			proprietaryCodecs = true;
 			enableWidevine = true;
 			commandLineArgs = lib.concatStringsSep " " [
