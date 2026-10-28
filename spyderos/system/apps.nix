@@ -17,7 +17,8 @@
 	exfatprogs
 	eza
 	fastfetch 
-	gcc 
+	gcc
+	gnome-clocks
 	gnumake 
 	gnutar
 	go 

@@ -13,7 +13,6 @@
 		alacritty
 		btop
 		cava 
-		chromium
 		cliphist
 		dconf
     foot
@@ -58,4 +57,17 @@
 			obs-backgroundremoval
 		];
 	};
+	
+	programs.chromium = {
+		enable = true;
+		commandLineArgs = [
+		"--ignore-gpu-blocklist" 
+		"--enable-gpu-rasterization" 
+		"--enable-zero-copy"
+		"--enable-features=VaapiVideoDecoder,VaapiVideoEncoder,IntensiveWakeUpThrottling,WaylandWindowDecorations,QuickIntensiveWakeUpThrottlingAfterLoading"
+		"--renderer-process-limit=4"
+		"--enable-best-effort-tasks"
+		];
+	};
+			
 }
