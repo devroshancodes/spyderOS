@@ -19,6 +19,11 @@
       url = "github:AvengeMedia/DankMaterialShell";
 			inputs.nixpkgs.follows = "nixpkgs-unstable";
   	};
+
+		quickshell = {
+  		url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
+  		inputs.nixpkgs.follows = "nixpkgs-unstable";
+		};
 };
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
