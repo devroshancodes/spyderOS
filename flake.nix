@@ -16,14 +16,15 @@
 		};
 
     dms = {
-      url = "github:AvengeMedia/DankMaterialShell";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
+      url = "github:duxlabs-dev/dux-shell/stable";
+			inputs.nixpkgs.follows = "nixpkgs";
   	};
 
-		quickshell = {
-  		url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-  		inputs.nixpkgs.follows = "nixpkgs-unstable";
-		};
+		dux-greeter = {
+      url = "github:duxlabs-dev/dux-greeter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
 };
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
@@ -32,7 +33,11 @@
     
       modules = [
         ./spyderos/default.nix
-        
+      
+				inputs.dux-greeter.nixosModules.default
+
+				inputs.dms.nixosModules.dank-material-shell 
+				
 				{ nixpkgs.hostPlatform = "x86_64-linux"; }
 
         { nixpkgs.config.allowUnfree = true ; }

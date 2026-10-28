@@ -1,7 +1,7 @@
 { config, pkgs, inputs, ... }:
 
 {
-  programs.dms-shell = {
+  programs.dank-material-shell = {
     enable = true;
 
     systemd = {
@@ -14,13 +14,10 @@
     enableVPN = true;
     enableDynamicTheming = true;
     enableAudioWavelength = true;
-    enableCalendarEvents = true;
-		
-		quickshell.package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
-		package = inputs.dms.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    enableCalendarEvents = true;	
   };
 	
-	services.displayManager.dms-greeter = {
+	programs.dms-greeter = {
 		enable = true;
 		compositor.name = "niri";
 		configHome = "/home/spyx";
@@ -38,7 +35,6 @@
 				hide-after-inactive-ms 10000
 			}
 		'';
-		quickshell.package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
 	};
 	
 	systemd.services.greetd.environment = {
