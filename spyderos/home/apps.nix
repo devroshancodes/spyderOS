@@ -67,7 +67,7 @@
 			"--enable-gpu-rasterization" 
 			"--enable-zero-copy"
 
-			"--enable-features=AccelerateVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
+			"--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
 	};
 			
