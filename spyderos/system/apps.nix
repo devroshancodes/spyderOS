@@ -75,7 +75,7 @@
 	
 	programs.kdeconnect.enable = true;
 	
-	pprograms.git = {
+	programs.git = {
   	enable = true;
   	config.safe.directory = [ "/home/spyx/spyderOS" ];
 	};
