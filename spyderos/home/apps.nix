@@ -61,12 +61,13 @@
 	programs.chromium = {
 		enable = true;
 		commandLineArgs = [
-		"--ignore-gpu-blocklist" 
-		"--enable-gpu-rasterization" 
-		"--enable-zero-copy"
-		"--enable-features=VaapiVideoDecoder,VaapiVideoEncoder,IntensiveWakeUpThrottling,WaylandWindowDecorations,QuickIntensiveWakeUpThrottlingAfterLoading"
-		"--renderer-process-limit=4"
-		"--enable-best-effort-tasks"
+			"--ozone-platform-hint=auto"
+		
+			"--ignore-gpu-blocklist" 
+			"--enable-gpu-rasterization" 
+			"--enable-zero-copy"
+
+			"--enable-features=AccelerateVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
 	};
 			
