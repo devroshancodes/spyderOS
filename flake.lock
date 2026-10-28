@@ -184,13 +184,34 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1792651682,
+        "narHash": "sha256-TiCGqLMpNIy7FERewgfKVluPsLVF96uc6x6xwZnMjdQ=",
+        "ref": "refs/heads/master",
+        "rev": "9b0f339b19057f4731bf3b48293307d7ef241671",
+        "revCount": 879,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://git.outfoxxed.me/outfoxxed/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "dms": "dms",
         "home-manager": "home-manager",
         "mango": "mango",
         "nixpkgs": "nixpkgs",
-        "nixpkgs-unstable": "nixpkgs-unstable"
+        "nixpkgs-unstable": "nixpkgs-unstable",
+        "quickshell": "quickshell"
       }
     },
     "scenefx": {

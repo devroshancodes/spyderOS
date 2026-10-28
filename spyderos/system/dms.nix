@@ -38,6 +38,7 @@
 				hide-after-inactive-ms 10000
 			}
 		'';
+		quickshell.package = inputs.quickshell.packages.${pkgs.stdenv.hostPlatform.system}.default;
 	};
 	
 	systemd.services.greetd.environment = {
