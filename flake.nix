@@ -32,7 +32,8 @@
       specialArgs = { inherit inputs; };
     
       modules = [
-        ./spyderos/default.nix
+        ./modules/default.nix
+				./hosts/spyderx/default.nix
       
 				inputs.dux-greeter.nixosModules.default
 
@@ -47,7 +48,7 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
 					home-manager.backupFileExtension = "bkup";
-          home-manager.users.spyx = import ./spyderos/home/home.nix;
+          home-manager.users.spyx = import ./modules/home/home.nix;
 					home-manager.extraSpecialArgs = { inherit inputs; };
         }
       ];
