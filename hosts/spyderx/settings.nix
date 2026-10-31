@@ -2,5 +2,5 @@
 {
 	networking.hostName = "spyxnix";
 
-	home.stateVersions = "26.05";
+	home.stateVersion = "26.05";
 }
