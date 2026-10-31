@@ -115,7 +115,7 @@
 	programs.appimage = {
 		enable = true;
 		binfmt = true;
-	}
+	};
 
 	#programs.ssh.startAgent = true;
 	environment.sessionVariables = {
