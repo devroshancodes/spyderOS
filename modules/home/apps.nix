@@ -12,6 +12,7 @@
 			proprietaryCodecs = true;
 			enableWidevine = true;
 			commandLineArgs = lib.concatStringsSep " " [
+				"--disable-features=AudioFocusEnhancement,AudioFocusDuckFlash"
 				"--ozone-platform=wayland"
         "--enable-wayland-ime=true"
         "--ignore-gpu-blocklist"
@@ -72,6 +73,7 @@
 	programs.chromium = {
 		enable = true;
 		commandLineArgs = [
+			"--disable-features=AudioFocusEnhancement,AudioFocusDuckFlash"
 			"--ozone-platform-hint=auto"
 		
 			"--ignore-gpu-blocklist" 
