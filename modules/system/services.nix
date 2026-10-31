@@ -58,7 +58,7 @@
 		};
 		path = [ pkgs.nix pkgs.git ];
 		script = ''
-			nix --extra-experimentl-features 'nix-command flakes' flake update nixpkgs
+			nix --extra-experimental-features 'nix-command flakes' flake update nixpkgs
 		'';
 	};
 
