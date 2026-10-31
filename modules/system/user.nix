@@ -1,5 +1,9 @@
 { config, lib, pkgs, ... }:
 
+let 
+	user = config.spyderos.user;
+
+in
 {
 	options.spyderos.user.name = lib.mkOption {
 		type = lib.types.str;
@@ -8,12 +12,12 @@
 	};
 
 	config = {
-		users.users.${config.spyderos.user.name} = { 
+		users.users.${user.name} = { 
 			isNormalUser = true;
 			extraGroups = [ "wheel" "audio" "video" "greeter" "wireshark" "networkmanager" ];
 			shell = pkgs.zsh;
 		};
 
-			};
+	};
 
 }
