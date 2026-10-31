@@ -1,6 +1,6 @@
 { config, ... }:
 {
-	user.name = "spyx";
+	spyderos.user.name = "spyx";
 
 	networking.hostName = "spyxnix";
 
