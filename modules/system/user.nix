@@ -1,15 +1,19 @@
-{ config, pkgs, ... }:
+{ config, lib, pkgs, ... }:
 
 {
-   users.users.spyx = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "video" "audio" "greeter" "wireshark" ];
-    shell = pkgs.zsh; 
-  };
-
-	users.users.greeter = {
-		extraGroups = [ "video" ];
+	options.spyderos.user.name = lib.mkOption {
+		type = lib.types.str;
+		example = "nix1";
+		description = "Name of the primary user account";
 	};
 
-  system.stateVersion = "26.05";
+	config = {
+		users.users.${config.spyderos.user.name} = { 
+			isNormalUser = true;
+			extraGroups = [ "wheel" "audio" "video" "greeter" "wireshark" "networkmanager" ];
+			shell = pkgs.zsh;
+		};
+
+			};
+
 }
