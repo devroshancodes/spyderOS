@@ -71,7 +71,7 @@
   		source-code-pro
 			vista-fonts
 		];
-		fontConfig = {
+		fontconfig = {
 			enable = true;
 			defaultFonts = {
 				sansSerif = [ "Liberation Sans" "Noto Sans Egyptian Hieroglyphs" "Noto Sans" "Noto Color Emoji" ];
