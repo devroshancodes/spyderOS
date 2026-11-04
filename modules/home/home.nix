@@ -99,6 +99,7 @@ let
     	shellAliases = {
       	spybuild = "nh os build";
       	spyupdate = "nh os switch";
+				cd = "z";
 			};
 
 			initContent = ''
@@ -138,7 +139,6 @@ let
 		programs.zoxide = {
 			enable = true;
 			enableZshIntegration = true;
-			options = [ "--cmd cd" ];
 		};
   	
 		programs.fastfetch.enable = true;
