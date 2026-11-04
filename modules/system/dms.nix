@@ -37,6 +37,10 @@
 		'';
 	};
 	
+	users.users.greeter = {
+			extraGroups = [ "video" ];
+	};
+
 	systemd.services.greetd.environment = {
 		XCURSOR_THEME = "Bibata-Modern-Ice";
 		XCURSOR_SIZE = "16";

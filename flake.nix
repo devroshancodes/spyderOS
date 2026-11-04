@@ -32,7 +32,9 @@
       specialArgs = { inherit inputs; };
     
       modules = [
-        ./spyderos/default.nix
+        ./modules/default.nix
+
+				./hosts/spyderx/default.nix
       
 				inputs.dux-greeter.nixosModules.default
 
@@ -43,13 +45,14 @@
         { nixpkgs.config.allowUnfree = true ; }
 
         home-manager.nixosModules.home-manager 
+				({ config, ...}:
 				{
-          home-manager.useGlobalPkgs = true;
-          home-manager.useUserPackages = true;
+					home-manager.useGlobalPkgs = true;
+					home-manager.useUserPackages = true;
 					home-manager.backupFileExtension = "bkup";
-          home-manager.users.spyx = import ./spyderos/home/home.nix;
+          home-manager.users.${config.spyderos.user.name} = import ./modules/home/home.nix;
 					home-manager.extraSpecialArgs = { inherit inputs; };
-        }
+				})
       ];
     };
   };

@@ -42,7 +42,7 @@
 
 					if [ -S /run/user/1000/bus ]; then
 						export XDG_RUNTIME_DIR=/run/user/1000
-						export DBUS_SESSION-BUS_ADDRESS=unix:path=/run/user/1000/bus
+						export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
 						${pkgs.libnotify}/bin/notify-send "Storage Ready" "External drive /mnt/hdd has successfully reinitialized." || true
 					fi
 			else
@@ -52,7 +52,7 @@
 		serviceConfig.Type = "oneshot";
 	};
 
-	home-manager.users.spyx = { config, ... }: {
+	home-manager.users.${config.spyderos.user.name} = { config, ... }: {
 		home.file = {
 			"videos/Videos" = {
 				source = config.lib.file.mkOutOfStoreSymlink "/mnt/hdd/Videos";

@@ -60,15 +60,26 @@
 	};
 
 
-  fonts.packages = with pkgs; [
-  comfortaa
-	corefonts
-	nerd-fonts.fira-code 
-	noto-fonts-color-emoji
-  source-code-pro
-	vista-fonts
-	];
-  
+  fonts = { 
+		packages = with pkgs; [
+  		comfortaa
+			corefonts
+			nerd-fonts.fira-code 
+			noto-fonts
+			noto-fonts-cjk-sans
+			noto-fonts-color-emoji
+  		source-code-pro
+			vista-fonts
+		];
+		fontconfig = {
+			enable = true;
+			defaultFonts = {
+				sansSerif = [ "Liberation Sans" "Noto Sans Egyptian Hieroglyphs" "Noto Sans" "Noto Color Emoji" ];
+				serif     = [ "Liberation Sans" "Noto Serif" "Noto Color Emoji" ];
+				monospace = [ "Fira Code Mono" "Noto Sans Mono" "Noto Color Emoji" ];
+			};
+		};
+  };
 	programs.zsh.enable = true;
 	
 	programs.localsend.enable = true;
@@ -110,6 +121,11 @@
 		package = pkgs.wireshark; 
 		dumpcap.enable = true;
 		usbmon.enable = true;
+	};
+
+	programs.appimage = {
+		enable = true;
+		binfmt = true;
 	};
 
 	#programs.ssh.startAgent = true;
