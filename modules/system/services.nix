@@ -14,8 +14,6 @@
 		enable = true;
 		openFirewall = true;
 	};
-	
-	security.auditd.enable = true;	
 
 	systemd.services.disable-xhc-wakeup	= {
 		description = "Disable XHC sleep wakeup trigger";
@@ -27,10 +25,6 @@
 		};
   };
 
-	security.audit = {
-		enable = true;
-	};
-	
 	services.openssh = {
 		enable = true;
 		settings = {
