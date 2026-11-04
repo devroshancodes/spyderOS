@@ -50,6 +50,7 @@
 					home-manager.useGlobalPkgs = true;
 					home-manager.useUserPackages = true;
 					home-manager.backupFileExtension = "bkup";
+					home-manager.overwriteBackup = true;
           home-manager.users.${config.spyderos.user.name} = import ./modules/home/home.nix;
 					home-manager.extraSpecialArgs = { inherit inputs; };
 				})
