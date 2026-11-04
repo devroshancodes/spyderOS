@@ -25,7 +25,9 @@
 	hdparm
 	iotop-c 
 	lm_sensors
-	lsof 
+	lsof
+	man-pages
+	man-pages-posix
 	meson 
 	ninja 
 	nix-direnv
@@ -126,6 +128,12 @@
 	programs.appimage = {
 		enable = true;
 		binfmt = true;
+	};
+
+	documentation = {
+		enable = true;
+		man.enable = true;
+		man.generateCaches = true;
 	};
 
 	#programs.ssh.startAgent = true;
