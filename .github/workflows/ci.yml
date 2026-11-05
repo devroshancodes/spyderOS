@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install nix
-        run: DeterminateSystem/nix-installer-action@main
+        uses: DeterminateSystem/nix-installer-action@main
 
       # Runs a set of commands using the runners shell
       - name: Evalute the flake
