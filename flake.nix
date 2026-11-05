@@ -1,5 +1,5 @@
 {
-	description = "SpyderOS - A sleek, minimal, high-efficiency NixOS distribution";
+	description = "SpyderOS - A sleek, minimal, high-efficiency NixOS customization.";
 
 	inputs = {
   	nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
