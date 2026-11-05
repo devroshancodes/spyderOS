@@ -55,6 +55,11 @@ let
 	"text/html"
 	];
 
+	mpv = "mpv.desktop";
+	videoPlayer = [
+		"video/mp4"
+	];
+
  in
   {
 		imports = [ 
@@ -88,8 +93,8 @@ let
 			enable = true;
 			defaultApplications = 
 				(lib.genAttrs imageTypes (_: loupe)) //
-				(lib.genAttrs webBrowser (_: vivaldi));
-			
+				(lib.genAttrs webBrowser (_: vivaldi)) //
+				(lib.gentAttrs videoPlayer (_:mpv));
 		}; 
 
   	programs.zsh = {
