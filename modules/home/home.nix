@@ -94,7 +94,7 @@ let
 			defaultApplications = 
 				(lib.genAttrs imageTypes (_: loupe)) //
 				(lib.genAttrs webBrowser (_: vivaldi)) //
-				(lib.gentAttrs videoPlayer (_:mpv));
+				(lib.genAttrs videoPlayer (_:mpv));
 		}; 
 
   	programs.zsh = {
