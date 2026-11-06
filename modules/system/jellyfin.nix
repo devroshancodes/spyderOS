@@ -5,6 +5,7 @@
     description = "Rootless Jellyfin Podman Container";
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
+		path = [ "/run/wrappers/bin" ];
 
     serviceConfig = {
       ExecStartPre = "-${pkgs.podman}/bin/podman rm -f jellyfin";

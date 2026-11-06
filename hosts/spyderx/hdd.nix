@@ -32,7 +32,7 @@
 		after = [ "systemd-suspend.service" "systemd-hibernate.service" ];
 		wantedBy = [ "systemd-suspend.service" "systemd-hibernate.service" ];
 		script = ''
-			echo "System resumed: checking for /mnt/hdd disl (UUID: EFFF-F48F)."
+			echo "System resumed: checking for /mnt/hdd disk (UUID: EFFF-F48F)."
 
 			if [ -e /dev/disk/by-uuid/EFFF-F48F ]; then
 					echo "Disk found! Restting and restarting mnt-hdd automount."
