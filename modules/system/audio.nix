@@ -8,6 +8,10 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-		extraConfig.pipewire."context.properties"."default.clock.quantum" = 2048;
+		extraConfig.pipewire = { 
+			"context.properties = { 
+				"default.clock.quantum" = 2048;
+			};
+		};
   };
 }
