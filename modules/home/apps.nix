@@ -71,7 +71,7 @@
 		];
 	};
 	
-	programs.chromium = {
+	/*programs.chromium = {
 		enable = true;
 		commandLineArgs = [
 			"--disable-features=AudioFocusEnhancement,AudioFocusDuckFlash"
@@ -83,6 +83,6 @@
 
 			"--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
-	};
+	};*/
 			
 }
