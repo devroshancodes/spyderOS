@@ -25,9 +25,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+		zen-browser = { 
+			url = {
+				"github:0xc000022070/zen-browser-flake";
+			};
+			inputs.nixpkgs.follows = "nixpkgs-unstable"
+		};
 };
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, zen-browser, ... }@inputs: {  
   	nixosConfigurations.spyxnix = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
     

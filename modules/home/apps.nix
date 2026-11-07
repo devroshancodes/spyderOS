@@ -21,6 +21,7 @@
         "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks"
       ];
 		})
+		inputs.zen-browser."${system}".default
 		adwaita-qt
 		adwaita-qt6
 		alacritty
