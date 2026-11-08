@@ -83,8 +83,4 @@
 			"--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
 	};
-	
-	programs.floorp = {
-		enable = true;
-	};
 }
