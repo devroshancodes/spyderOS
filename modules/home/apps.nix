@@ -18,10 +18,9 @@
         "--ignore-gpu-blocklist"
         "--enable-gpu-rasterization"
         "--enable-zero-copy"
-        "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks"
+        "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks,TouchpadOverscrollHistoryNavigation,OverscrollHistoryNavigation"
       ];
 		})
-		inputs.zen-browser.packages."${pkgs.stdenv.hostPlatform.system}".default
 		adwaita-qt
 		adwaita-qt6
 		alacritty
@@ -84,5 +83,8 @@
 			"--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
 	};
-			
+	
+	programs.floorp = {
+		enable = true;
+	};
 }

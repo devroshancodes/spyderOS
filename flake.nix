@@ -25,14 +25,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-		zen-browser = { 
-			url = "github:0xc000022070/zen-browser-flake";
-			inputs.nixpkgs.follows = "nixpkgs-unstable";
-		};
-
 	};
 
-	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, zen-browser, ... }@inputs: {  
+	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
   	nixosConfigurations.spyxnix = nixpkgs.lib.nixosSystem {
       specialArgs = { inherit inputs; };
     
@@ -52,12 +47,14 @@
         home-manager.nixosModules.home-manager 
 				({ config, ...}:
 				{
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.backupFileExtension = "bkup";
-					home-manager.overwriteBackup = true;
-          home-manager.users.${config.spyderos.user.name} = import ./modules/home/home.nix;
-					home-manager.extraSpecialArgs = { inherit inputs; };
+					home-manager = { 
+						useGlobalPkgs = true;
+						useUserPackages = true;
+						backupFileExtension = "bkup";
+						overwriteBackup = true;
+          	users.${config.spyderos.user.name} = import ./modules/home/home.nix;
+						extraSpecialArgs = { inherit inputs; };
+					};
 				})
       ];
     };
