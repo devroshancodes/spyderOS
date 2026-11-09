@@ -51,7 +51,7 @@
 		shotcut
 		transmission_4-gtk
 		vlc
-		vscode
+		unstable.vscode
 		wineWow64Packages.stable
 		winetricks
 		yazi
