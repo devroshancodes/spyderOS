@@ -1,5 +1,5 @@
 {
-	description = "SpyderOS - A sleek, minimal, high-efficiency NixOS distribution";
+	description = "SpyderOS - A sleek, minimal, high-efficiency NixOS customization.";
 
 	inputs = {
   	nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
@@ -25,7 +25,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-};
+	};
 
 	outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, mango, dms, ... }@inputs: {  
   	nixosConfigurations.spyxnix = nixpkgs.lib.nixosSystem {
@@ -47,11 +47,14 @@
         home-manager.nixosModules.home-manager 
 				({ config, ...}:
 				{
-					home-manager.useGlobalPkgs = true;
-					home-manager.useUserPackages = true;
-					home-manager.backupFileExtension = "bkup";
-          home-manager.users.${config.spyderos.user.name} = import ./modules/home/home.nix;
-					home-manager.extraSpecialArgs = { inherit inputs; };
+					home-manager = { 
+						useGlobalPkgs = true;
+						useUserPackages = true;
+						backupFileExtension = "bkup";
+						overwriteBackup = true;
+          	users.${config.spyderos.user.name} = import ./modules/home/home.nix;
+						extraSpecialArgs = { inherit inputs; };
+					};
 				})
       ];
     };

@@ -11,8 +11,9 @@
 		./system/jellyfin.nix
     ./system/mangowm.nix
     ./system/networking.nix
+		./system/security.nix
 		./system/services.nix
 		./system/user.nix
-    ./system/virtualization.nix
+    ./system/virtualisation.nix
   ];
 }

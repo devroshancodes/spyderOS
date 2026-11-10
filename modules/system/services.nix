@@ -14,23 +14,7 @@
 		enable = true;
 		openFirewall = true;
 	};
-	
-	security.auditd.enable = true;	
 
-	systemd.services.disable-xhc-wakeup	= {
-		description = "Disable XHC sleep wakeup trigger";
-  	wantedBy = [ "multi-user.target" ];
-  	serviceConfig = {
-    	Type = "oneshot";
-    	ExecStart = "${pkgs.bash}/bin/bash -c 'echo XHC > /proc/acpi/wakeup'";
-    	RemainAfterExit = true;
-		};
-  };
-
-	security.audit = {
-		enable = true;
-	};
-	
 	services.openssh = {
 		enable = true;
 		settings = {
@@ -50,6 +34,8 @@
 		enable = true;
 	};
 	
+	services.fwupd.enable = true;
+	
 	systemd.services.flake-update = {
 		serviceConfig = {
 			Type = "oneshot";
@@ -59,6 +45,10 @@
 		path = [ pkgs.nix pkgs.git ];
 		script = ''
 			nix --extra-experimental-features 'nix-command flakes' flake update
+			git diff --quiet HEAD -- flake.lock || {
+				git add flake.lock
+				git commit -m "Update: Flake.lock updated successfully!"
+			}
 		'';
 	};
 
@@ -79,7 +69,15 @@
     randomizedDelaySec = "15min"; 
   };
 	
-	services.fwupd.enable = true;
+	systemd.services.disable-xhc-wakeup	= {
+		description = "Disable XHC sleep wakeup trigger";
+  	wantedBy = [ "multi-user.target" ];
+  	serviceConfig = {
+    	Type = "oneshot";
+    	ExecStart = "${pkgs.bash}/bin/bash -c 'echo XHC > /proc/acpi/wakeup'";
+    	RemainAfterExit = true;
+		};
+  };
 
 	nix.settings = {
 		experimental-features = [ "nix-command" "flakes" ];

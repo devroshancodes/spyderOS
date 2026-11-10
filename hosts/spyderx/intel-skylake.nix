@@ -9,6 +9,10 @@
 	hardware.enableRedistributableFirmware = true;
   
 	boot.kernelPackages = pkgs.linuxPackages_latest;
+	
+	boot.extraModprobeConfig = ''
+		options snd_hda_intel power_save=0
+	'';
 
 	#services.tlp = {
   #  enable = true;

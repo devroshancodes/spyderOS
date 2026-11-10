@@ -18,7 +18,7 @@
         "--ignore-gpu-blocklist"
         "--enable-gpu-rasterization"
         "--enable-zero-copy"
-        "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks"
+        "--enable-features=WaylandWindowDecorations,AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiIgnoreDriverChecks,TouchpadOverscrollHistoryNavigation,OverscrollHistoryNavigation"
       ];
 		})
 		adwaita-qt
@@ -51,7 +51,7 @@
 		shotcut
 		transmission_4-gtk
 		vlc
-		vscode
+		unstable.vscode
 		wineWow64Packages.stable
 		winetricks
 		yazi
@@ -83,5 +83,4 @@
 			"--enable-features=AcceleratedVideoDecodeLinuxGL,AcceleratedVideoDecodeLinuxZeroCopyGL,VaapiVideoDecoder,VaapiIgnoreDriverChecks,QuickIntensiveWakeUpThrottlingAfterLoading"
 		];
 	};
-			
 }

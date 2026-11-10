@@ -55,6 +55,11 @@ let
 	"text/html"
 	];
 
+	mpv = "mpv.desktop";
+	videoPlayer = [
+		"video/mp4"
+	];
+
  in
   {
 		imports = [ 
@@ -88,8 +93,8 @@ let
 			enable = true;
 			defaultApplications = 
 				(lib.genAttrs imageTypes (_: loupe)) //
-				(lib.genAttrs webBrowser (_: vivaldi));
-			
+				(lib.genAttrs webBrowser (_: vivaldi)) //
+				(lib.genAttrs videoPlayer (_:mpv));
 		}; 
 
   	programs.zsh = {
@@ -99,6 +104,7 @@ let
     	shellAliases = {
       	spybuild = "nh os build";
       	spyupdate = "nh os switch";
+				cd = "z";
 			};
 
 			initContent = ''
@@ -138,7 +144,6 @@ let
 		programs.zoxide = {
 			enable = true;
 			enableZshIntegration = true;
-			options = [ "--cmd cd" ];
 		};
   	
 		programs.fastfetch.enable = true;

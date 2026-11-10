@@ -5,6 +5,7 @@
     description = "Rootless Jellyfin Podman Container";
     wantedBy = [ "default.target" ];
     after = [ "network.target" ];
+		path = [ "/run/wrappers/bin" ];
 
     serviceConfig = {
       ExecStartPre = "-${pkgs.podman}/bin/podman rm -f jellyfin";
@@ -14,6 +15,7 @@
           -p 8096:8096 \
           -v /home/spyx/jellyfin/config:/config:Z \
           -v /home/spyx/jellyfin/cache:/cache:Z \
+					-v /home/spyx/jellyfin/jellyfin-web:/jellyfin/jellyfin-web:ro,z \
           -v /mnt/hdd/Videos:/media:ro,z \
 					-v /mnt/hdd/Pictures:/pictures:ro,z \
           docker.io/jellyfin/jellyfin:latest
