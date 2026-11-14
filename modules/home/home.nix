@@ -48,7 +48,7 @@ let
 		"image/jxl"
   ];
 	
-	vivaldi = "vivaldi-stable.desktop";
+	firefox = "org.mozilla.firefox.desktop";
 	webBrowser = [
 	"x-scheme-handler/http"
 	"x-scheme-handler/https"
@@ -93,7 +93,7 @@ let
 			enable = true;
 			defaultApplications = 
 				(lib.genAttrs imageTypes (_: loupe)) //
-				(lib.genAttrs webBrowser (_: vivaldi)) //
+				(lib.genAttrs webBrowser (_: firefox)) //
 				(lib.genAttrs videoPlayer (_:mpv));
 		}; 
 

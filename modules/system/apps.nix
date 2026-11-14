@@ -34,6 +34,7 @@
 	nmap
 	ntfs3g
 	nvme-cli
+	p7zip
 	pciutils 
 	podman
 	pwvucontrol
