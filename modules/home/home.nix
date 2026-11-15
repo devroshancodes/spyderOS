@@ -108,6 +108,8 @@ let
 			};
 
 			initContent = ''
+				bindkey -v '^?' backward-delete-char
+      	bindkey -v '^H' backward-delete-char
 				if [[ -o interactive && -z "$FASTFETCH_SHOWN" ]]; then
 					export FASTFETCH_SHOWN=1
 					fastfetch
