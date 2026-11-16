@@ -134,7 +134,7 @@
 	documentation = {
 		enable = true;
 		man.enable = true;
-		man.generateCaches = true;
+		man.cache.enable = true;
 	};
 
 	#programs.ssh.startAgent = true;
