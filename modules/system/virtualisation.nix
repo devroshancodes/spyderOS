@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
-
+let 
+	virt = config.spyderos.virtualisation;
 {
 	virtualisation.podman = {
 		enable = true;
