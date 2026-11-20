@@ -2,6 +2,7 @@
 let 
 	virt = config.spyderos.virtualisation;
 {
+	options.spyderos.virtualisation 
 	virtualisation.podman = {
 		enable = true;
 		dockerCompat = true;
