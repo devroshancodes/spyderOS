@@ -1,6 +1,11 @@
 { config, pkgs, ... }:
-
+let 
+	virt = config.spyderos.virtualisation;
 {
+	options.spyderos.virtualisation = lib.mkOption {
+		default = false;
+	};
+
 	virtualisation.podman = {
 		enable = true;
 		dockerCompat = true;
