@@ -1,6 +1,7 @@
 { config, ... }:
 {
 	spyderos.user.name = "spyx";
+	spyderos.virtualisation.enable = true;
 
 	networking.hostName = "spyxnix";
 

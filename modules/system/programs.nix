@@ -1,6 +1,10 @@
 { config, pkgs, ... }:
+let
+	userHome = "/home/${config.spyderos.user.name}";
+
+in
 {
-programs.zsh.enable = true;
+	programs.zsh.enable = true;
 	
 	programs.localsend.enable = true;
 	
@@ -8,7 +12,7 @@ programs.zsh.enable = true;
 	
 	programs.git = {
   	enable = true;
-  	config.safe.directory = [ "/home/spyx/spyderOS" ];
+  	config.safe.directory = [ "${userHome}/spyderOS" ];
 	};
 	
 	programs.steam = {

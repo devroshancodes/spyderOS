@@ -2,9 +2,7 @@
 	
 	let
   	# Finds the first user account where 'isNormalUser = true' is declared
-  	normalUsers = lib.filterAttrs (name: user: user.isNormalUser) config.users.users;
-  	firstUser = builtins.elemAt (builtins.attrNames normalUsers) 0;
-  	userHome = "/home/${firstUser}";
+  	userHome = "/home/${config.spyderos.user.name}";
 
 	in
 {

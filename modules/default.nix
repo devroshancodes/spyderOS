@@ -11,7 +11,7 @@
 		./system/jellyfin.nix
     ./system/mangowm.nix
     ./system/networking.nix
-	./system/programs.nix
+		./system/programs.nix
 		./system/security.nix
 		./system/services.nix
 		./system/user.nix
