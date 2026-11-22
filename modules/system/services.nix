@@ -39,8 +39,8 @@
 	systemd.services.flake-update = {
 		serviceConfig = {
 			Type = "oneshot";
-			User = "spyx";
-			WorkingDirectory = "/home/spyx/spyderOS";
+			User = "${config.spyderos.user.name}";
+			WorkingDirectory = "/home/${config.spyderos.user.name}spyderOS";
 		};
 		path = [ pkgs.nix pkgs.git ];
 		script = ''
@@ -59,7 +59,7 @@
 		
 	system.autoUpgrade = {
     enable = true;
-    flake = "/home/spyx/spyderOS#spyxnix"; # Ensure this points to your actual flake directory on disk
+    flake = "/home/${config.spyderos.user.name}/spyderOS#spyxnix"; # Ensure this points to your actual flake directory on disk
     flags = [ "-L" ];
 
     # Update exactly on Mon at 07:00:00 local time
