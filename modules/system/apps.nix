@@ -7,21 +7,25 @@
 	in
 {
 	environment.systemPackages = with pkgs; [
-	brightnessctl
 	bibata-cursors
+	brightnessctl
 	cmake 
 	compsize
 	direnv
 	exfatprogs
 	eza
-	fastfetch 
+	fastfetch
+	ffmpeg
 	gcc
 	gnome-clocks
 	gnumake 
 	gnutar
 	go 
 	hdparm
-	iotop-c 
+	intel-gpu-tools
+	iw
+	iotop-c
+	jq
 	lm_sensors
 	lsof
 	man-pages
@@ -44,6 +48,7 @@
 	strace 
 	tcpdump
 	traceroute
+	tree
 	unzip
 	usbutils 
 	uv 
@@ -51,6 +56,7 @@
 	whois
 	wl-clipboard
 	wlr-randr
+	yt-dlp
 	zoxide 
   zip
   ];
