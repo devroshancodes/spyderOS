@@ -123,7 +123,7 @@ let
     	
 			settings = {
 				python = {
-      		symbol = " ";
+      		symbol = " ";
       		detect_extensions = [ "py" ];
       		detect_files = [ ".python-version" "pyproject.toml" "requirements.txt" ];
 				};
@@ -131,7 +131,7 @@ let
     		right_format = "$cmd_duration";
 				cmd_duration = {
 					min_time = 300;
-					format = "⏱️ [$duration](bold yellow) ";
+					format = " [$duration](bold yellow) ";
 					style = "bold yellow";
 				};
 			};

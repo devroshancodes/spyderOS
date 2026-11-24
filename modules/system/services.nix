@@ -40,7 +40,7 @@
 		serviceConfig = {
 			Type = "oneshot";
 			User = "${config.spyderos.user.name}";
-			WorkingDirectory = "/home/${config.spyderos.user.name}spyderOS";
+			WorkingDirectory = "/home/${config.spyderos.user.name}/spyderOS";
 		};
 		path = [ pkgs.nix pkgs.git ];
 		script = ''
@@ -53,7 +53,7 @@
 	};
 
 	systemd.services.nixos-upgrade = {
-  	wants = [ "flake-update.service" ];
+  	requires = [ "flake-update.service" ];
   	after = [ "flake-update.service" ];
 	};
 		
