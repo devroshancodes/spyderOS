@@ -76,8 +76,8 @@
 			enable = true;
 			defaultFonts = {
 				sansSerif = [ "Liberation Sans" "Noto Sans Egyptian Hieroglyphs" "Noto Sans" "Noto Color Emoji" ];
-				serif     = [ "Liberation Sans" "Noto Serif" "Noto Color Emoji" ];
-				monospace = [ "Fira Code Mono" "Noto Sans Mono" "Noto Color Emoji" ];
+				serif     = [ "Liberation Serif" "Noto Serif" "Noto Color Emoji" ];
+				monospace = [ "FiraCode Nerd Font" "Noto Sans Mono" "Noto Color Emoji" ];
 			};
 		};
   };
