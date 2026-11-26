@@ -12,6 +12,7 @@
 	cmake 
 	compsize
 	direnv
+	dmidecode
 	exfatprogs
 	eza
 	fastfetch
@@ -27,6 +28,7 @@
 	iotop-c
 	jq
 	lm_sensors
+	lshw
 	lsof
 	man-pages
 	man-pages-posix
